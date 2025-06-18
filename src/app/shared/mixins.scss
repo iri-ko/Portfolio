@@ -1,0 +1,16 @@
+@mixin width-1940 {
+    max-width: 1940px;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin d-flex-jstf-space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin d-flex-aln-items-center {
+    display: flex;
+    align-content: center;
+}
+

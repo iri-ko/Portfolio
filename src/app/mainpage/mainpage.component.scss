@@ -1,0 +1,11 @@
+@import "../shared/mixins.scss";
+
+.content {
+    @include width-1940;
+    
+    display: flex;
+    flex-direction: column;
+
+
+    min-height: calc(100dvh - 110px - 291px);
+}

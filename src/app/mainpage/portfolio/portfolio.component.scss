@@ -1,0 +1,32 @@
+@import "../../shared/mixins.scss";
+
+.content {
+    @include width-1940;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    .headline {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 50px;
+
+        .shortblueline {
+            height: 4px;
+            width: 109px;
+            background-color: #4b47ff;
+        }
+
+        .longblueline {
+            height: 4px;
+            width: 484px;
+            background-color: #4b47ff;
+        }
+    }
+
+    span {
+        align-self: center;
+        margin-bottom: 100px;
+    }
+}

@@ -1,0 +1,54 @@
+@import "../../shared/mixins.scss";
+
+
+.content {
+    @include width-1940;
+    
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 100px;
+    width: 100%;
+    margin: 100px 0px;
+    gap: 140px;
+
+    .aboutmeleft {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        h2 {
+            font-size: 90px;
+        }
+
+        .icontext{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+
+            img {
+                height: 50px;
+            }
+        }
+    }
+
+    .aboutmeright {
+        display: flex;
+        align-items: center;
+        
+        img {
+            width: 509px;
+            height: 509px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px #00BEE8 solid;
+        }
+
+        .blueline {
+            background-color: #00BEE8;
+            height: 4px;
+            width: 250px
+        }
+    }
+}

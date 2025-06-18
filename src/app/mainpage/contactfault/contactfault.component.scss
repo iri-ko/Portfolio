@@ -1,0 +1,49 @@
+@import "../../shared/mixins.scss";
+
+
+.content {
+    @include width-1940;
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 100px;
+
+    .socialmedia {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 500px;
+        gap: 42px;
+
+        .blueline {
+            width: 100px;
+            height: 4px;
+        }
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .scrolldown {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        height: 100px;
+        gap: 40px;
+
+        span {
+            transform: rotate(90deg);
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            align-self: center;
+        }
+    }
+}
