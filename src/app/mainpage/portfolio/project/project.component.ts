@@ -1,0 +1,39 @@
+import { Component } from '@angular/core';
+import { Projects } from '../../../shared/interfaces/projects';
+
+@Component({
+  selector: 'app-project',
+  imports: [],
+  templateUrl: './project.component.html',
+  styleUrl: './project.component.scss'
+})
+export class ProjectComponent {
+    projects: Array<Projects> = [
+    {
+      image: "assets/images/join photo.png",
+      name: "Join",
+      skills: "Angular | Typescript | HTML | SCSS",
+      description: "Task manager inspired by the Kanban FileSystem. Create and organize tasks using drag and drop DeclareFunctionStmt, assign users and categories.",
+      urlLiveTest: "LinktoJoin",
+      urlGithub: "LinktoGithub"
+    },
+    {
+      image: "assets/images/Sharkie photo.png",
+      name: "El Pollo Loco",
+      skills: "Javascript | HTML | CSS",
+      description: "A simple browser game programmed with Javascript. Based on object-oriented approach. Help Pepe defeat the crazy chickens!",
+      urlLiveTest: "LinktoJoin",
+      urlGithub: "LinktoGithub"
+    },
+    {
+      image: "assets/images/Pokédex photo.png",
+      name: "Pokédex",
+      skills: "Javascript | HTML | CSS | API",
+      description: "Based on the PokéAPI. A simple library that provieds and catalogues pokémon information. Go catch'em all!",
+      urlLiveTest: "LinktoJoin",
+      urlGithub: "LinktoGithub"
+    },
+    
+    
+  ];
+}

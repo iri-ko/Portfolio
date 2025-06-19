@@ -1,0 +1,39 @@
+@import "../../shared/mixins.scss";
+
+
+.content {
+    @include width-1940;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    
+    .headline {
+        display: flex;
+        align-items: center;
+        margin-bottom: 100px;
+        .shortblueline {
+            background-color: #4B47FF;
+            height: 4px;
+            width: 50px;
+            margin-right: 50px;
+        }
+    }
+
+    .contactdiv {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 100px;
+
+        .contactleft {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+
+            h4 {
+                font-weight: 700;
+                font-size: 32px;
+            }
+        }
+    }
+}

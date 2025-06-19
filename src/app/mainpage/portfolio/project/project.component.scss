@@ -1,0 +1,68 @@
+@import "../../../shared/mixins.scss";
+
+.content {
+    @include width-1940;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    width: 80dvw;
+
+    .project-div{
+        display: flex;
+        align-items: center;
+        margin-bottom: 100px;
+
+        img {
+            width: 620px;
+            height: 339px;
+            object-fit: cover;
+        }
+
+        .projectright {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            justify-content: flex-end;
+
+            h3 {
+                color: #4B47FF;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 120%;
+            }
+
+            .skillspan {
+                color: #00BEE8;
+                font-size: 23px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .links {
+                display: flex;
+                justify-content: flex-start;
+                gap: 86px;
+
+                .livetest {
+                    background-color: #4B47FF;
+                    padding: 15px 30px;
+                    font-size: 23px;
+                    border-radius: 10px;
+                }
+
+                .github {
+                    border: solid, 1px, #00BEE8;
+                    padding: 15px 30px;
+                    font-size: 23px;
+                    border-radius: 10px;
+                }
+
+            }
+        }
+    }
+}

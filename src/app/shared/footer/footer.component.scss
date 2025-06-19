@@ -3,11 +3,41 @@
 footer {
     height: 200px;
     width: 100%;
-    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    border-top: 4px solid #00BEE8;
 
     .content {
         @include width-1940;
-        @include d-flex-jstf-space-between;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 0px 100px;
+
+        .footerleft {
+            display: flex;
+            flex-direction: column;
+
+            .logo{
+                font-size: 40px;
+            }
+
+            a {
+                font-size: 16px;
+            }
+        }
+
+        .footercenter {
+            font-size: 23px;
+
+        }
+
+        .footerright {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
     }
 }
