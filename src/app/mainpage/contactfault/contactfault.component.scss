@@ -24,6 +24,11 @@
 
         img {
             width: 30px;
+
+            &:hover {
+                cursor: pointer;
+                width: 40px;
+            }
         }
     }
 

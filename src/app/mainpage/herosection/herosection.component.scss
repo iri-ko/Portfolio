@@ -1,5 +1,5 @@
 @import "../../shared/mixins.scss";
-
+@import "../../../styles.scss";
 
 .content {
     @include width-1940;
@@ -22,17 +22,28 @@
         display: flex;
         flex-direction: column;
         margin-top: 1cqb;
+        justify-content: center;
+
+        span: {
+            margin: 0;
+        }
 
         .namesection {
+            width: 100%;
             display: flex;
-            
+            justify-content: center;
+            gap: 35px;
+
             .vertical-I-am {
                 transform: rotate(-90deg);
                 font-size: 64px;
-                line-height: 120%;
+                display: inline-block;
+                white-space: nowrap;
+                margin-right: -30px; 
+                align-self: center;
             }
 
-            .namesection-right{
+            .namesection-right {
                 display: flex;
                 flex-direction: column;
 
@@ -45,12 +56,9 @@
                 .frontend {
                     font-size: 58px;
                     line-height: 120%;
-                    color: #4B47FF;
+                    color: #4b47ff;
                 }
-
-
             }
-
         }
 
         .buttonsec {
@@ -59,11 +67,23 @@
             justify-content: center;
 
             button {
-                background-color: #00BEE8;
-                padding: 15px 30px;
+                display: inline-block;
+                background-color: $lightblue;
+                border: none;
+                padding: 20px 40px;
                 border-radius: 10px;
                 font-size: 23px;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+                transform: scale(0.94);
+
+                &:hover {
+                    background-color: $intenseblue;
+                    transform: scale(1);
+                    cursor: pointer;
+                }
             }
+
+
         }
     }
 }
