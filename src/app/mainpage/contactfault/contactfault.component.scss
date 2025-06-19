@@ -3,7 +3,7 @@
 
 .content {
     @include width-1940;
-    
+
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -12,37 +12,59 @@
 
     .socialmedia {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-        width: 500px;
+        justify-content: flex-start;
         gap: 42px;
 
-        .blueline {
-            width: 100px;
-            height: 4px;
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 42px;
+            flex-wrap: nowrap;
         }
 
-        img {
+        .iconrow {
+            display: flex;
+            gap: 42px;
+        }
+
+        .iconimg {
+            display: block;
             width: 30px;
+            transition: transform 0.2s ease;
+            transform-origin: left center;
 
             &:hover {
+                transform: scale(1.33) translateX(5px);
                 cursor: pointer;
-                width: 40px;
             }
         }
+
+
+        .email {
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-size: 23px;
+        }
     }
+
+
+
+
 
     .scrolldown {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-
+        align-items: center;
+        justify-content: center;
         height: 100px;
-        gap: 40px;
+        gap: 60px;
 
         span {
+            display: inline-block;
             transform: rotate(90deg);
+            font-size: 23px;
+            
         }
 
         img {
@@ -51,4 +73,7 @@
             align-self: center;
         }
     }
+
+
+
 }
