@@ -1,4 +1,5 @@
 @import "../../../shared/mixins.scss";
+@import "../../../../styles.scss";
 
 .content {
     @include width-1940;
@@ -10,7 +11,7 @@
 
     width: 80dvw;
 
-    .project-div{
+    .project-div {
         display: flex;
         align-items: center;
         margin-bottom: 100px;
@@ -28,14 +29,14 @@
             justify-content: flex-end;
 
             h3 {
-                color: #4B47FF;
+                color: $intenseblue;
                 font-weight: 700;
                 font-size: 32px;
                 line-height: 120%;
             }
 
             .skillspan {
-                color: #00BEE8;
+                color: $lightblue;
                 font-size: 23px;
             }
 
@@ -49,17 +50,25 @@
                 gap: 86px;
 
                 .livetest {
-                    background-color: #4B47FF;
+                    background-color: $intenseblue;
                     padding: 15px 30px;
                     font-size: 23px;
                     border-radius: 10px;
+
+                    &:hover {
+                        background-color: $lightblue;
+                    }
                 }
 
                 .github {
-                    border: solid, 1px, #00BEE8;
+                    border: solid, 1px, $lightblue;
                     padding: 15px 30px;
                     font-size: 23px;
                     border-radius: 10px;
+
+                    &:hover {
+                        background-color: $lightblue;
+                    }
                 }
 
             }
