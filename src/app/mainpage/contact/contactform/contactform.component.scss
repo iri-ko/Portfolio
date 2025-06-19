@@ -1,4 +1,5 @@
 @import "../../../shared/mixins.scss";
+@import "../../../../styles.scss";
 
 form {
     display: flex;
@@ -6,43 +7,98 @@ form {
     gap: 35px;
 
     .shortinput {
-        border: solid 1px #4B46FF;
-        background-color: #141d2f;
+        border: solid 1px $intenseblue;
+        background-color: $darkblue;
         border-radius: 10px;
         padding: 15px 25px;
+
+        &::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+        &:hover {
+            border-color: $lightblue;
+            cursor: pointer;
+        }
     }
 
     .messageinput {
-        border: solid 1px #4B46FF;
-        background-color: #141d2f;
+        border: solid 1px $intenseblue;
+        background-color: $darkblue;
         border-radius: 10px;
         padding: 15px 25px;
         height: 202px;
+
+        &::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+        &:hover {
+            border-color: $lightblue;
+            cursor: pointer;
+        }
     }
 
     .checkbox {
         display: flex;
         gap: 10px;
+        font-size: 14px;
 
         .check {
-            height: 24px;
-            width: 24px;
-            border: solid 1px #00BEE8;
-            background-color: #141d2f;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            width: 16px;
+            height: 16px;
+            border: 1px solid $lightblue;
+            background-color: $darkblue;
+            cursor: pointer;
+
+            &:checked {
+                color: $lightblue;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 3px;
+                    height: 8px;
+                    border: solid $lightblue;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+            }
         }
 
+
         a {
-            color: #4B46FF;
+            color: $intenseblue;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
     button {
-        background-color: #B6B6B6;
+        background-color: $lightblue;
         border-radius: 10px;
         padding: 15px 30px;
         font-size: 23px;
         width: 250px;
         align-self: center;
         margin-top: 50px;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+                transform: scale(0.94);
+
+        &:hover {
+            transform: scale(1);
+                    cursor: pointer;
+        }
     }
 }
