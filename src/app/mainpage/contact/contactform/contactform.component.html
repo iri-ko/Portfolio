@@ -1,10 +1,60 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-    <input class="shortinput" type="text" placeholder="Your name" formControlName="name" />
+    <div class="input-group" [ngClass]="{
+       'error': contactForm.get('name')?.invalid && contactForm.get('name')?.touched,
+       'success': contactForm.get('name')?.valid && contactForm.get('name')?.touched
+     }">
+        <input class="shortinput" type="text" placeholder="Your name" formControlName="name" />
+        <img *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+            src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
+        <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched"
+            src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
 
-    <input class="shortinput" type="email" placeholder="Your email" formControlName="email" />
+        <p class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            Your name is required
+        </p>
+    </div>
 
-    <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
+
+    <div class="input-group" [ngClass]="{
+       'error': contactForm.get('email')?.invalid && contactForm.get('email')?.touched,
+       'success': contactForm.get('email')?.valid && contactForm.get('email')?.touched
+     }">
+
+        <input class="shortinput" type="email" placeholder="Your email" formControlName="email" />
+
+        <img *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+            src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
+
+        <img *ngIf="contactForm.get('email')?.valid && contactForm.get('email')?.touched"
+            src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
+
+        <p class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            Your email is required
+        </p>
+
+    </div>
+
+
+    <div class="input-group"
+     [ngClass]="{
+       'error': contactForm.get('message')?.invalid && contactForm.get('message')?.touched,
+       'success': contactForm.get('message')?.valid && contactForm.get('message')?.touched
+     }">
+
+  <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
+
+  <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+       src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
+
+  <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched"
+       src="assets/icons/submit-works.png" alt="success icon" class="success-icon" />
+
+  <p class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+    Your message is empty.
+  </p>
+
+</div>
 
     <div class="checkbox">
         <input class="check" type="checkbox" formControlName="isChecked" />
@@ -12,6 +62,6 @@
             <a href="#">privacy policy</a> and agree to the processing of my data</span>
     </div>
 
-    <button [disabled]="contactForm.invalid">Send message</button>
+    <button type="submit" [disabled]="contactForm.invalid">Send message</button>
 
 </form>

@@ -1,57 +1,113 @@
 @import "../../../shared/mixins.scss";
 @import "../../../../styles.scss";
 
+
 form {
     display: flex;
     flex-direction: column;
     gap: 35px;
 
-    .shortinput {
-        border: solid 1px $intenseblue;
-        background-color: $darkblue;
-        border-radius: 10px;
-        padding: 15px 25px;
 
-        &::placeholder {
-            color: white;
-            opacity: 1;
-            transition: opacity 0.2s ease;
+
+    .input-group {
+        position: relative;
+
+        .shortinput {
+            border: solid 1px $intenseblue;
+            background-color: $darkblue;
+            border-radius: 10px;
+            padding: 15px 25px;
+            width: 100%;
+
+            &::placeholder {
+                color: white;
+                opacity: 1;
+                transition: opacity 0.2s ease;
+            }
+
+            &:hover {
+                border-color: $lightblue;
+                cursor: pointer;
+            }
+
+            &:focus {
+                border-color: $lightblue;
+                outline: none;
+            }
         }
 
-        &:hover {
-            border-color: $lightblue;
-            cursor: pointer;
+        .messageinput {
+            border: solid 1px $intenseblue;
+            background-color: $darkblue;
+            border-radius: 10px;
+            padding: 15px 25px;
+            height: 202px;
+            width: 100%;
+
+            &::placeholder {
+                color: white;
+                opacity: 1;
+                transition: opacity 0.2s ease;
+            }
+
+            &:hover {
+                border-color: $lightblue;
+                cursor: pointer;
+            }
+
+            &:focus {
+                border-color: $lightblue;
+                outline: none;
+            }
         }
 
-        &:focus {
-            border-color: $lightblue;
-            outline: none;
+        &.error {
+            .shortinput {
+                border-color: #E61C40;
+                width: 100%;
+            }
+
+            .messageinput {
+                border-color: #E61C40;
+                width: 100%;
+            }
+
+            .error-icon {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                transform: translateY(-50%);
+                height: 20px;
+                width: 20px;
+            }
+
+            .error-message {
+                color: #E61C40;
+                font-size: 13px;
+                margin-top: 8px;
+            }
         }
     }
 
-    .messageinput {
-        border: solid 1px $intenseblue;
-        background-color: $darkblue;
-        border-radius: 10px;
-        padding: 15px 25px;
-        height: 202px;
+    .input-group.success {
 
-        &::placeholder {
-            color: white;
-            opacity: 1;
-            transition: opacity 0.2s ease;
+        .shortinput,
+        .messageinput {
+            border-color: #70E61C;
+            width: 100%;
         }
 
-        &:hover {
-            border-color: $lightblue;
-            cursor: pointer;
-        }
-
-        &:focus {
-            border-color: $lightblue;
-            outline: none;
+        .success-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 20px;
         }
     }
+
+
 
     .shortinput::placeholder,
     .messageinput::placeholder {
