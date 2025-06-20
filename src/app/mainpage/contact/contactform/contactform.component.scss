@@ -15,11 +15,17 @@ form {
         &::placeholder {
             color: white;
             opacity: 1;
+            transition: opacity 0.2s ease;
         }
 
         &:hover {
             border-color: $lightblue;
             cursor: pointer;
+        }
+
+        &:focus {
+            border-color: $lightblue;
+            outline: none;
         }
     }
 
@@ -33,13 +39,32 @@ form {
         &::placeholder {
             color: white;
             opacity: 1;
+            transition: opacity 0.2s ease;
         }
 
         &:hover {
             border-color: $lightblue;
             cursor: pointer;
         }
+
+        &:focus {
+            border-color: $lightblue;
+            outline: none;
+        }
     }
+
+    .shortinput::placeholder,
+    .messageinput::placeholder {
+        color: white;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    .shortinput:focus::placeholder,
+    .messageinput:focus::placeholder {
+        opacity: 0;
+    }
+
 
     .checkbox {
         display: flex;
@@ -94,11 +119,11 @@ form {
         align-self: center;
         margin-top: 50px;
         transition: transform 0.2s ease, background-color 0.2s ease;
-                transform: scale(0.94);
+        transform: scale(0.94);
 
         &:hover {
             transform: scale(1);
-                    cursor: pointer;
+            cursor: pointer;
         }
     }
 }

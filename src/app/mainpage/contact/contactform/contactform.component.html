@@ -1,11 +1,17 @@
-<form action="">
-    <input class="shortinput" type="text" placeholder="Your name" />
-    <input class="shortinput" type="text" placeholder="Your email" />
-    <textarea class="messageinput" type="text" placeholder="Your message"></textarea>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <input class="shortinput" type="text" placeholder="Your name" formControlName="name" />
+
+    <input class="shortinput" type="email" placeholder="Your email" formControlName="email" />
+
+    <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
+
     <div class="checkbox">
-        <input class="check" type="checkbox" />
+        <input class="check" type="checkbox" formControlName="isChecked" />
         <span>I've read the
-            <a href="">privacy policy</a> and agree to the processing of my data as outlined</span>
+            <a href="#">privacy policy</a> and agree to the processing of my data</span>
     </div>
-    <button>Send message</button>
+
+    <button [disabled]="contactForm.invalid">Send message</button>
+
 </form>
