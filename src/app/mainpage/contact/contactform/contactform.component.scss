@@ -2,15 +2,26 @@
 @import "../../../../styles.scss";
 
 
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px $darkblue inset;
+    box-shadow: 0 0 0px 1000px $darkblue inset;
+    -webkit-text-fill-color: white;
+    transition: background-color 9999s ease-out;
+}
+
+
 form {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    width: 40dvw;
 
 
 
     .input-group {
         position: relative;
+        width: 100%;
 
         .shortinput {
             border: solid 1px $intenseblue;
@@ -121,6 +132,14 @@ form {
         opacity: 0;
     }
 
+    .checkbox-group.error {
+        .error-message {
+            color: #E61C40;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+    }
+
 
     .checkbox {
         display: flex;
@@ -180,6 +199,26 @@ form {
         &:hover {
             transform: scale(1);
             cursor: pointer;
+        }
+    }
+
+    .submit-success {
+        color: #70E61C;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 15px;
+        animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

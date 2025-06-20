@@ -36,32 +36,47 @@
     </div>
 
 
-    <div class="input-group"
-     [ngClass]="{
+    <div class="input-group" [ngClass]="{
        'error': contactForm.get('message')?.invalid && contactForm.get('message')?.touched,
        'success': contactForm.get('message')?.valid && contactForm.get('message')?.touched
      }">
 
-  <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
+        <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
 
-  <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-       src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
+        <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+            src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
 
-  <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched"
-       src="assets/icons/submit-works.png" alt="success icon" class="success-icon" />
+        <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched"
+            src="assets/icons/submit-works.png" alt="success icon" class="success-icon" />
 
-  <p class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-    Your message is empty.
-  </p>
+        <p class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            Your message is empty.
+        </p>
 
-</div>
-
-    <div class="checkbox">
-        <input class="check" type="checkbox" formControlName="isChecked" />
-        <span>I've read the
-            <a href="#">privacy policy</a> and agree to the processing of my data</span>
     </div>
 
+    <div class="checkbox-group" [ngClass]="{
+       'error': contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched
+     }">
+
+        <label class="checkbox">
+            <input type="checkbox" class="check" formControlName="privacy" />
+            I accept the <a>privacy policy</a>
+        </label>
+
+        <p class="error-message" *ngIf="contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched">
+            Please accept the privacy policy
+        </p>
+
+    </div>
+
+
     <button type="submit" [disabled]="contactForm.invalid">Send message</button>
+
+    <p class="submit-success" *ngIf="submissionSuccess">
+        Thanks for your message! I'll respond soon!
+    </p>
+
+
 
 </form>
