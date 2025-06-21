@@ -1,8 +1,8 @@
 export interface Projects {
-    image: string; 
+    image: string;
     name: string;
     skills: string;
-    description: string;
+    description: { EN: string; DE: string };
     urlLiveTest: string;
-    urlGithub:string
+    urlGithub: string;
 }

@@ -4,14 +4,14 @@
        'error': contactForm.get('name')?.invalid && contactForm.get('name')?.touched,
        'success': contactForm.get('name')?.valid && contactForm.get('name')?.touched
      }">
-        <input class="shortinput" type="text" placeholder="Your name" formControlName="name" />
+        <input class="shortinput" type="text" placeholder="{{text.namePlaceholder}}" formControlName="name" />
         <img *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
             src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
         <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched"
             src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
 
         <p class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
-            Your name is required
+            {{text.nameError}}
         </p>
     </div>
 
@@ -21,7 +21,7 @@
        'success': contactForm.get('email')?.valid && contactForm.get('email')?.touched
      }">
 
-        <input class="shortinput" type="email" placeholder="Your email" formControlName="email" />
+        <input class="shortinput" type="email" placeholder="{{text.emailPlaceholder}}" formControlName="email" />
 
         <img *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
             src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
@@ -30,7 +30,7 @@
             src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
 
         <p class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-            Your email is required
+            {{text.emailError}}
         </p>
 
     </div>
@@ -41,7 +41,7 @@
        'success': contactForm.get('message')?.valid && contactForm.get('message')?.touched
      }">
 
-        <textarea class="messageinput" placeholder="Your message" formControlName="message"></textarea>
+        <textarea class="messageinput" placeholder="{{text.messagePlaceholder}}" formControlName="message"></textarea>
 
         <img *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
             src="assets/icons/submit-needed.png" alt="error icon" class="error-icon" />
@@ -50,7 +50,7 @@
             src="assets/icons/submit-works.png" alt="success icon" class="success-icon" />
 
         <p class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-            Your message is empty.
+            {{text.messageError}}
         </p>
 
     </div>
@@ -61,20 +61,20 @@
 
         <label class="checkbox">
             <input type="checkbox" class="check" formControlName="privacy" />
-            I accept the <a>privacy policy</a>
+            {{text.privacyLabel}}<a> {{text.privacyGuidelines}}</a>
         </label>
 
         <p class="error-message" *ngIf="contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched">
-            Please accept the privacy policy
+            {{text.privacyError}}
         </p>
 
     </div>
 
 
-    <button type="submit" [disabled]="contactForm.invalid">Send message</button>
+    <button type="submit" [disabled]="contactForm.invalid">{{text.submit}}</button>
 
     <p class="submit-success" *ngIf="submissionSuccess">
-        Thanks for your message! I'll respond soon!
+        {{text.success}}
     </p>
 
 
