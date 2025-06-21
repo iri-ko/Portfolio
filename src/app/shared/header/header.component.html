@@ -2,9 +2,10 @@
     <div class="content">
         <a href="#hero"> <img class="logo" src="assets/images/Logo.png" alt=""></a>
         <div class="menu">
-            <a href="#aboutme">About me</a>
-            <a href="#myskills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#aboutme">{{navText.about}}</a>
+            <a href="#myskills">{{navText.skills}}</a>
+            <a href="#portfolio">{{navText.portfolio}}</a>
+
             <div class="language">
                 <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
                 <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
