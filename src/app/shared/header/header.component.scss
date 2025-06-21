@@ -24,6 +24,7 @@ header {
 
         .menu {
             display: flex;
+            align-items: center;
             width: auto;
             gap: 29px;
 
@@ -34,6 +35,25 @@ header {
 
                 &:hover {
                     color: $lightblue;
+                }
+            }
+
+            .language{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                button {
+                    background-color: $darkblue;
+                    border: solid 1px $lightblue;
+                    padding: 5px;
+                    font-size: 16px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $lightblue;
+                    }
+                    
                 }
             }
         }
