@@ -6,9 +6,11 @@
             <a href="#myskills">Skills</a>
             <a href="#portfolio">Portfolio</a>
             <div class="language">
-                <button>DE</button>
-                <button>EN</button>
+                <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
+                <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
+
             </div>
+
         </div>
 
     </div>
