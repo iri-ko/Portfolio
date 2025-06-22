@@ -21,4 +21,6 @@ export class FooterComponent {
       this.text.imprint = lang === 'DE' ? 'Impressum' : 'Imprint';
     });
   }
+
+  
 }

@@ -13,6 +13,7 @@ export class HeaderComponent {
     portfolio: '',
   };
 
+  activeSection: string = '';
   currentLang: 'EN' | 'DE' = 'EN';
 
   constructor(private languageService: LanguageService) {
@@ -41,4 +42,8 @@ export class HeaderComponent {
   switchLang(lang: 'EN' | 'DE') {
     this.languageService.setLang(lang);
   }
+
+  setActive(sectionId: string) {
+  this.activeSection = sectionId;
+}
 }

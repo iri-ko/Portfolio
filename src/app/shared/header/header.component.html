@@ -2,9 +2,12 @@
     <div class="content">
         <a href="#hero"> <img class="logo" src="assets/images/Logo.png" alt=""></a>
         <div class="menu">
-            <a href="#aboutme">{{navText.about}}</a>
-            <a href="#myskills">{{navText.skills}}</a>
-            <a href="#portfolio">{{navText.portfolio}}</a>
+            <a href="#aboutme" [class.active-link]="activeSection === 'aboutme'" (click)="setActive('aboutme')">{{
+                navText.about }}</a>
+            <a href="#myskills" [class.active-link]="activeSection === 'myskills'" (click)="setActive('myskills')">{{
+                navText.skills }}</a>
+            <a href="#portfolio" [class.active-link]="activeSection === 'portfolio'" (click)="setActive('portfolio')">{{
+                navText.portfolio }}</a>
 
             <div class="language">
                 <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
