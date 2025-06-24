@@ -29,6 +29,10 @@ main {
             transform: none;
             left: 0;
         }
+
+        @media (max-width: 750px){
+            width: 100%;
+        }
     }
 
     .highlights_2 {
@@ -37,6 +41,10 @@ main {
         z-index: 6;
         right: 0;
         top: 850px;
+
+           @media (max-width: 750px) {
+                width: 50%;
+            }
     }
 
     .highlights_3 {
@@ -46,6 +54,10 @@ main {
         left: 0;
         top: 1900px;
         z-index: 1;
+
+           @media (max-width: 750px) {
+                width: 30%
+            }
     }
 
     .highlights_4 {
@@ -54,6 +66,10 @@ main {
         right: 0;
         top: 3000px;
         z-index: 1;
+
+         @media (max-width: 750px) {
+                width: 50%
+            }
     }
 
     .highlights_5 {

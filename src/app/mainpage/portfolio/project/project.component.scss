@@ -14,6 +14,12 @@
     width: 80%;
     margin-bottom: 100px;
 
+    @media (max-width: 750px) {
+        width: 100%;
+        padding: 0px;
+
+    }
+
     .project-div {
         display: flex;
         align-items: flex-start;
@@ -25,6 +31,10 @@
             align-items: center;
         }
 
+        @media (max-width: 750px) {
+            padding: 0px 25px;
+        }
+
         img {
             width: 620px;
             height: 339px;
@@ -33,6 +43,10 @@
             @media (max-width: 1570px) {
                 width: 80%;
                 height: auto;
+            }
+
+            @media (max-width: 750px) {
+                width: 100%;
             }
         }
 
@@ -49,6 +63,11 @@
                 align-items: center;
                 text-align: center;
                 gap: 40px;
+            }
+
+            @media (max-width: 750px) {
+                font-size: 32px;
+                width: 100%;
             }
 
             h3 {
@@ -72,11 +91,24 @@
                 justify-content: flex-start;
                 gap: 86px;
 
+                @media (max-width: 750px) {
+                    gap: 50px;
+                    justify-content: space-between;
+                }
+
+                @media (max-width: 400px) {
+                    flex-direction: column;
+                }
+
                 .livetest {
                     background-color: $intenseblue;
                     padding: 15px 30px;
                     font-size: 23px;
                     border-radius: 10px;
+
+                    @media (max-width: 500px) {
+                        padding: 15px;
+                    }
 
                     &:hover {
                         background-color: $lightblue;

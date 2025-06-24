@@ -12,6 +12,16 @@
         padding-right: 100px;
     }
 
+    @media (max-width: 750px) {
+            padding: 0px 25px;
+                }
+
+    h2 {
+        @media (max-width: 750px) {
+                 margin-bottom: 0;;
+                }
+    }
+
     .aboutmeleft {
         width: 40%;
         display: flex;

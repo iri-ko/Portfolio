@@ -25,6 +25,10 @@
         margin-bottom: 50px;
     }
 
+     @media (max-width: 750px) {
+                padding: 0px 25px;
+            }
+
 
     .hero-image {
 
@@ -48,6 +52,10 @@
             @media (max-width: 750px) {
                 width: 410px;
                 height: 490px
+            }
+
+             @media (max-width: 530px) {
+                width: 100%
             }
 
         }
@@ -77,6 +85,10 @@
         @media (max-width: 750px) {
             justify-content: flex-start;
         }
+
+         @media (max-width: 750px) {
+                width: 100%
+            }
 
         .namesection {
             width: 100%;

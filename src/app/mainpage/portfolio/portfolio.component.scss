@@ -12,10 +12,18 @@
         justify-content: flex-end;
         gap: 50px;
 
+        @media (max-width: 750px) {
+            gap: 10px;
+        }
+
         .shortblueline {
             height: 4px;
             width: 109px;
             background-color: $intenseblue;
+
+            @media (max-width: 750px) {
+                width: 20px;
+            }
         }
 
         .longblueline {
@@ -26,11 +34,21 @@
             @media (max-width: 750px) {
                 width: 75px;
             }
+
+            @media (max-width: 750px) {
+                width: 75px;
+            }
         }
     }
 
     span {
         align-self: center;
         margin-bottom: 100px;
+
+        @media (max-width: 750px) {
+            padding: 0px 25px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
     }
 }
