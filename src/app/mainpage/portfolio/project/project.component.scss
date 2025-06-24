@@ -20,10 +20,20 @@
         justify-content: center;
         height: auto;
 
+        @media (max-width: 1570px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         img {
             width: 620px;
             height: 339px;
             object-fit: cover;
+
+            @media (max-width: 1570px) {
+                width: 80%;
+                height: auto;
+            }
         }
 
         .projectright {
@@ -33,6 +43,13 @@
             flex-direction: column;
             justify-content: flex-end;
             gap: 20px;
+
+            @media (max-width: 1570px) {
+                width: 60%;
+                align-items: center;
+                text-align: center;
+                gap: 40px;
+            }
 
             h3 {
                 color: $intenseblue;
@@ -83,22 +100,45 @@
     .project-div.reverse {
         flex-direction: row-reverse;
 
+        @media (max-width: 1570px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .projectright {
             align-items: flex-end;
             text-align: right;
 
+            @media (max-width: 1570px) {
+                text-align: center;
+                align-items: center;
+            }
+
             .links {
                 justify-content: flex-end;
+
+                @media (max-width: 1570px) {
+                    justify-content: center;
+                }
             }
         }
     }
 
     .project-div.offset-right {
-        transform: translateX(20px); 
+        transform: translateX(20px);
+
+        @media (max-width: 1570px) {
+            transform: none;
+        }
+
     }
 
     .project-div.offset-left {
         transform: translateX(-20px);
+
+        @media (max-width: 1570px) {
+            transform: none;
+        }
     }
 
 }

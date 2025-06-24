@@ -6,6 +6,7 @@ main {
     display: flex;
     flex-direction: column;
 }
+
 .content {
     flex-direction: column;
     align-items: center;
@@ -18,10 +19,16 @@ main {
     .highlight_1 {
         height: 671.38px;
         width: 707.35px;
-        top: 0;
         position: absolute;
+        left: 50%;
         top: 200px;
+        transform: translateX(-50%);
         z-index: 3;
+
+        @media (min-width: 1100px) {
+            transform: none;
+            left: 0;
+        }
     }
 
     .highlights_2 {
@@ -64,5 +71,29 @@ main {
         position: absolute;
         top: 420px;
         z-index: 5;
+
+        @media (max-width: 1536px) {
+            display: none;
+        }
+    }
+
+    .curve_mb {
+        width: 100%;
+        position: absolute;
+        top: 650px;
+        z-index: 5;
+
+        @media (min-width: 1536px) {
+            display: none;
+        }
+
+        @media (max-width: 1340px) {
+            top: 540px;
+        }
+
+        @media (max-width: 1100px) {
+            top: 540px;
+        }
+        
     }
 }

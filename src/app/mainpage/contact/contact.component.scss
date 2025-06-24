@@ -1,16 +1,19 @@
 @import "../../shared/mixins.scss";
+@import "../../../styles.scss";
 
 
 .content {
     flex-direction: column;
     margin-bottom: 100px;
-    
+
+
     .headline {
         display: flex;
         align-items: center;
         margin-bottom: 50px;
+
         .shortblueline {
-            background-color: #4B47FF;
+            background-color: $intenseblue;
             height: 4px;
             width: 50px;
             margin-right: 50px;
@@ -22,11 +25,22 @@
         justify-content: space-between;
         padding: 0px 100px;
 
+        @media (max-width: 1210px) {
+            flex-direction: column;
+            gap: 50px;
+        }
+
+
         .contactleft {
             width: 500px;
             display: flex;
             flex-direction: column;
             gap: 35px;
+
+            @media (max-width: 1210px) {
+                width: 70%;
+                gap: 20px;
+            }
 
             h4 {
                 font-weight: 700;

@@ -15,7 +15,11 @@ header {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin: 0px 100px;
+        padding: 0px 100px;
+
+         @media (max-width: 750px) {
+                padding: 50px;
+            }
 
         .logo {
             height: 80px;
@@ -23,6 +27,9 @@ header {
 
         .menu {
 
+            @media (max-width: 751px) {
+                display: none;
+            }
 
             ul {
                 display: flex;
@@ -73,6 +80,7 @@ header {
 
                 button {
                     background-color: $darkblue;
+                    border-radius: 10px;
                     border: solid 1px $lightblue;
                     padding: 5px;
                     font-size: 16px;
@@ -91,6 +99,12 @@ header {
 
             }
 
+        }
+
+        .burg-img {
+            @media (min-width: 750px) {
+                display: none;
+            }
         }
     }
 }

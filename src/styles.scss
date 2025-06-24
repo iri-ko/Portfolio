@@ -36,14 +36,12 @@ h2 {
     line-height: 120%;
     letter-spacing: 0%;
     margin-bottom: 34px;
+    
+    @media (max-width: 750px){
+        font-size: 45px;
+    }
 }
 
-button {
-    background-color: #00bee8;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 23px;
-}
 
 
 header, main, section, footer{

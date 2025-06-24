@@ -8,6 +8,11 @@ footer {
     align-items: center;
     border-top: 4px solid $lightblue;
 
+    @media (max-width: 750px) {
+        height: 380px;
+    }
+
+
     .content {
         @include width-1940;
         width: 100%;
@@ -17,6 +22,10 @@ footer {
         align-items: center;
         padding: 0px 100px;
 
+        @media (max-width: 750px) {
+            flex-direction: column;
+        }
+
         .footerleft {
             display: flex;
             flex-direction: column;
@@ -24,10 +33,19 @@ footer {
 
             .logo {
                 height: 80px;
+
+                @media (max-width: 750px) {
+                    margin-bottom: 28px;
+                    height: 80px;
+                }
             }
 
             .implink {
                 font-size: 16px;
+
+                @media (max-width: 750px) {
+                    display: none;
+                }
 
                 &::after {
                     content: '';
@@ -52,12 +70,21 @@ footer {
         .footercenter {
             font-size: 23px;
 
+            @media (max-width: 750px) {
+                margin-bottom: 30px;
+            }
+
+
         }
 
         .footerright {
             display: flex;
             justify-content: space-between;
             gap: 50px;
+
+            @media (max-width: 750px) {
+                margin-bottom: 30px;
+            }
 
             img {
 
@@ -72,6 +99,12 @@ footer {
                         cursor: pointer;
                     }
                 }
+            }
+        }
+
+        .footer-imp-mb {
+            @media (min-width: 750px) {
+                display: none;
             }
         }
     }

@@ -17,6 +17,9 @@ form {
     gap: 35px;
     width: 40dvw;
 
+    @media (max-width: 1210px){
+        width: 100%;
+    }
 
 
     .input-group {

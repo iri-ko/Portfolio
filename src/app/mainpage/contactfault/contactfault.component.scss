@@ -1,10 +1,7 @@
 @import "../../shared/mixins.scss";
-
+@import "../../../styles.scss";
 
 .content {
-    @include width-1940;
-
-    display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: flex-end;
@@ -46,6 +43,10 @@
             white-space: nowrap;
             flex-shrink: 0;
             font-size: 23px;
+
+            @media (max-width: 1100px) {
+                display: none;
+            }
         }
     }
 
@@ -61,11 +62,15 @@
         height: 100px;
         gap: 60px;
 
+        @media (max-width: 1100px) {
+            display: none;
+        }
+
         span {
             display: inline-block;
             transform: rotate(90deg);
             font-size: 23px;
-            
+
         }
 
         img {
