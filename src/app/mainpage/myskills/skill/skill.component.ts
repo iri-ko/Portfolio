@@ -23,10 +23,6 @@ export class SkillComponent {
     name: "CSS"
   },
   {
-    image: "assets/icons/Angular.png",
-    name: "Angular"
-  },
-  {
     image: "assets/icons/Git.png",
     name: "Git"
   },
