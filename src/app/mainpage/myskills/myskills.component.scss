@@ -3,19 +3,18 @@
 
 
 .content {
-    @include width-1940;
-    
-    display: flex;
     justify-content: space-between;
     padding-left:  100px;
     width: 100%;
     margin: 100px 0px;
+    z-index: 2;
 
     .icons {
-        width: 50%;
+        width: 40%;
         display: flex;
-        justify-content: space-between;
-        gap: 123px;
+        justify-content: flex-start;
+        row-gap: 40px;
+        column-gap: 60px;
         flex-wrap: wrap;
     }
     .myskills {

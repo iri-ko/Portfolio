@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Projects } from '../../../shared/interfaces/projects';
 import { LanguageService } from '../../../shared/services/language.service';
-
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-project',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

@@ -1,6 +1,19 @@
 .iconskill {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 10px
+    width: 70px;
+
+    gap: 15px;
+
+
+    img {
+        width: 60px;
+    }
+
+    span {
+        font-weight: 700;
+    }
+
 }

@@ -1,11 +1,68 @@
 @import "../shared/mixins.scss";
+@import "../../styles.scss";
 
-.content {
-    @include width-1940;
 
+main {
     display: flex;
     flex-direction: column;
+}
+.content {
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 
 
     min-height: calc(100dvh - 110px - 291px);
+
+    .highlight_1 {
+        height: 671.38px;
+        width: 707.35px;
+        top: 0;
+        position: absolute;
+        top: 200px;
+        z-index: 3;
+    }
+
+    .highlights_2 {
+        position: absolute;
+        top: 0;
+        z-index: 6;
+        right: 0;
+        top: 850px;
+    }
+
+    .highlights_3 {
+        position: absolute;
+        top: 0;
+        z-index: 6;
+        left: 0;
+        top: 1900px;
+        z-index: 1;
+    }
+
+    .highlights_4 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        top: 3000px;
+        z-index: 1;
+    }
+
+    .highlights_5 {
+        position: absolute;
+        bottom: 0;
+        z-index: 6;
+        left: 0;
+        z-index: 1;
+        height: 200px;
+        width: 200px;
+    }
+
+    .curve {
+        width: 100%;
+        position: absolute;
+        top: 420px;
+        z-index: 5;
+    }
 }

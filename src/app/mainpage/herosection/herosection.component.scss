@@ -2,19 +2,20 @@
 @import "../../../styles.scss";
 
 .content {
-    @include width-1940;
-    min-height: calc(100dvh - 110px - 291px);
     width: 100%;
+    max-width: 1920px;
     height: auto;
-    display: flex;
     justify-content: space-between;
-    padding: 106px 100px 100px 47px;
+    align-items: center;
+    padding: 50px 100px 100px 47px;
 
     .hero-image {
         img {
+            margin-top: 100px;
             height: 705px;
             width: 646px;
             object-fit: cover;
+            z-index: 4;
         }
     }
 

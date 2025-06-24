@@ -1,20 +1,24 @@
 @import "../../../shared/mixins.scss";
 @import "../../../../styles.scss";
 
+
 .content {
     @include width-1940;
+    margin: 0 auto;
+    padding: 0px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-self: center;
-
-    width: 80dvw;
+    gap: 100px;
+    width: 80%;
+    margin-bottom: 100px;
 
     .project-div {
         display: flex;
-        align-items: center;
-        margin-bottom: 100px;
+        align-items: flex-start;
+        justify-content: center;
+        height: auto;
 
         img {
             width: 620px;
@@ -23,10 +27,12 @@
         }
 
         .projectright {
+            padding-top: 60px;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 35px;
             justify-content: flex-end;
+            gap: 20px;
 
             h3 {
                 color: $intenseblue;
@@ -41,7 +47,7 @@
             }
 
             .description {
-                font-size: 16px;
+                font-size: 16px
             }
 
             .links {
@@ -61,7 +67,7 @@
                 }
 
                 .github {
-                    border: solid, 1px, $lightblue;
+                    border: solid 1px $lightblue;
                     padding: 15px 30px;
                     font-size: 23px;
                     border-radius: 10px;
@@ -70,8 +76,29 @@
                         background-color: $lightblue;
                     }
                 }
-
             }
         }
     }
+
+    .project-div.reverse {
+        flex-direction: row-reverse;
+
+        .projectright {
+            align-items: flex-end;
+            text-align: right;
+
+            .links {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .project-div.offset-right {
+        transform: translateX(20px); 
+    }
+
+    .project-div.offset-left {
+        transform: translateX(-20px);
+    }
+
 }
