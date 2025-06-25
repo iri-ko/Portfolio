@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+
+section {
+    height: calc(100dvh - 110px);
+    width: 100%;
+
+    .content {
+        padding: 150px 100px;
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+
+        @media (max-width: 750px){
+            padding: 150px 25px;
+        }
+
+    }
+}
