@@ -14,5 +14,10 @@ import { ContactComponent } from "./contact/contact.component";
 })
 
 export class MainpageComponent {
+  activeSection: string = '';
+  setActive(sectionId: string) {
+    this.activeSection = sectionId;
 
+
+  }
 }

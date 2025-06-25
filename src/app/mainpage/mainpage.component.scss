@@ -30,7 +30,7 @@ main {
             left: 0;
         }
 
-        @media (max-width: 750px){
+        @media (max-width: 750px) {
             width: 100%;
         }
     }
@@ -42,9 +42,9 @@ main {
         right: 0;
         top: 850px;
 
-           @media (max-width: 750px) {
-                width: 50%;
-            }
+        @media (max-width: 750px) {
+            width: 50%;
+        }
     }
 
     .highlights_3 {
@@ -55,9 +55,9 @@ main {
         top: 1900px;
         z-index: 1;
 
-           @media (max-width: 750px) {
-                width: 30%
-            }
+        @media (max-width: 750px) {
+            width: 30%
+        }
     }
 
     .highlights_4 {
@@ -67,9 +67,9 @@ main {
         top: 3000px;
         z-index: 1;
 
-         @media (max-width: 750px) {
-                width: 50%
-            }
+        @media (max-width: 750px) {
+            width: 50%
+        }
     }
 
     .highlights_5 {
@@ -85,12 +85,14 @@ main {
     .curve {
         width: 100%;
         position: absolute;
-        top: 420px;
+        top: 320px;
         z-index: 5;
 
         @media (max-width: 1536px) {
             display: none;
         }
+
+        
     }
 
     .curve_mb {
@@ -107,8 +109,22 @@ main {
             top: 540px;
         }
 
-        @media (max-width: 1100px) {
-            top: 540px;
+    }
+
+    .go-up{
+        position: absolute;
+        right: 100px;
+        z-index: 50;
+        bottom: 50px;
+
+        div {
+            height: 39px;
+            width: 39px;
+            background-image: url(../../../public/assets/icons/go-up.png);
+
+        &:hover {
+            background-image: url(../../../public/assets/icons/go-up-hover.png);
+        }
         }
         
     }

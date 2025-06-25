@@ -52,8 +52,6 @@ export class HeaderComponent {
 
   setActive(sectionId: string) {
     this.activeSection = sectionId;
-
-
   }
 
   openMenu() {
