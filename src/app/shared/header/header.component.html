@@ -14,7 +14,7 @@
                         (click)="setActive('portfolio')">{{
                         navText.portfolio }}</a></li>
 
-                
+
 
 
                 <div class="language">
@@ -25,7 +25,42 @@
             </ul>
         </nav>
 
-        <img class="burg-img" src="assets/icons/burger-menu.png" alt="">
+        <img (click)="openMenu()" class="burg-img" src="assets/icons/burger-menu.png" alt="">
+
+        <div class="burger-menu" [class.open]="isBurgerOpen" [class.slide-out]="isClosing">
+            <div class="top">
+                <img class="logo" src="assets/images/Logo.png" alt="">
+                <div class="language">
+                    <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
+                    <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
+
+                </div>
+                <img (click)="closeMenu()" class="close" src="assets/icons/Property 1=CLOSE FINAL.png" alt="">
+            </div>
+
+            <div class="links">
+                <ul>
+
+                    <li> <a href="#aboutme" [class.active-link]="activeSection === 'aboutme'"
+                            (click)="setActive('aboutme')">{{
+                            navText.about }}</a></li>
+                    <li><a href="#myskills" [class.active-link]="activeSection === 'myskills'"
+                            (click)="setActive('myskills')">{{
+                            navText.skills }}</a></li>
+                    <li><a href="#portfolio" [class.active-link]="activeSection === 'portfolio'"
+                            (click)="setActive('portfolio')">{{
+                            navText.portfolio }}</a></li>
+
+
+                    <li><a href="#contact" [class.active-link]="activeSection === 'contact'"
+                            (click)="setActive('contact')">{{
+                            navText.contact}}</a></li>
+
+
+                </ul>
+            </div>
+
+        </div>
 
     </div>
 </header>

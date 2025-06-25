@@ -36,27 +36,35 @@ h2 {
     line-height: 120%;
     letter-spacing: 0%;
     margin-bottom: 34px;
-    
-    @media (max-width: 750px){
+
+    @media (max-width: 750px) {
         font-size: 45px;
     }
 }
 
 
 
-header, main, section, footer{
+header,
+main,
+section,
+footer {
     width: 100%;
     display: flex;
     justify-content: center;
 
-    .content{
+    .content {
         width: 100%;
         max-width: 1920px;
     }
 }
 
 section {
-    .content{
+    .content {
         display: flex;
     }
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }

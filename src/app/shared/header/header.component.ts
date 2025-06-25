@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { LanguageService } from '../../shared/services/language.service';
+
 
 @Component({
   selector: 'app-header',
@@ -11,12 +12,16 @@ export class HeaderComponent {
     about: '',
     skills: '',
     portfolio: '',
+    contact: '',
   };
 
   activeSection: string = '';
   currentLang: 'EN' | 'DE' = 'EN';
 
-  constructor(private languageService: LanguageService) {
+  isBurgerOpen = false;
+  isClosing = false;
+
+  constructor(private languageService: LanguageService, private renderer: Renderer2) {
     this.languageService.currentLang.subscribe((lang) => {
       this.currentLang = lang;
 
@@ -26,6 +31,7 @@ export class HeaderComponent {
             about: 'Über mich',
             skills: 'Kenntnisse',
             portfolio: 'Portfolio',
+            contact: 'Kontakt'
           };
           break;
         case 'EN':
@@ -34,6 +40,7 @@ export class HeaderComponent {
             about: 'About me',
             skills: 'Skills',
             portfolio: 'Portfolio',
+            contact: 'Contact'
           };
       }
     });
@@ -44,6 +51,25 @@ export class HeaderComponent {
   }
 
   setActive(sectionId: string) {
-  this.activeSection = sectionId;
+    this.activeSection = sectionId;
+
+
+  }
+
+  openMenu() {
+    this.isBurgerOpen = true;
+    this.isClosing = false;
+    this.renderer.addClass(document.body, 'no-scroll');
+  }
+
+  closeMenu() {
+    this.isClosing = true;
+
+    this.isBurgerOpen = false;
+    this.isClosing = false;
+    this.renderer.removeClass(document.body, 'no-scroll');
+  }
+
+
 }
-}
+

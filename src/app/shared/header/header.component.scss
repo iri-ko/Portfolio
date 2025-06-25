@@ -17,9 +17,9 @@ header {
         width: 100%;
         padding: 0px 100px;
 
-         @media (max-width: 750px) {
-                padding: 37px 25px;
-            }
+        @media (max-width: 750px) {
+            padding: 37px 25px;
+        }
 
         .logo {
             height: 80px;
@@ -102,8 +102,112 @@ header {
         }
 
         .burg-img {
+            &:hover {
+                cursor: pointer;
+            }
+
             @media (min-width: 750px) {
                 display: none;
+
+
+            }
+        }
+
+        .burger-menu {
+            pointer-events: none;
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 10001;
+            background-color: #141d2f96;
+
+            transform: translateX(100%); // off-screen to the right
+            opacity: 0;
+            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.4s;
+
+            &.slide-out {
+                transform: translateX(100%);
+                opacity: 0;
+                pointer-events: none;
+                visibility: hidden;
+                transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.4s;
+            }
+
+            &.open {
+                pointer-events: auto;
+                transform: translateX(0);
+                opacity: 1;
+                display: block;
+                visibility: visible;
+                transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0s;
+            }
+
+
+            .top {
+                height: 110px;
+                width: 100%;
+                background-color: $darkblue;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2px 25px;
+
+                .logo {
+                    height: 80px;
+                }
+
+                .close {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .language {
+                    display: flex;
+                    gap: 10px;
+
+                    button {
+                        background-color: $darkblue;
+                        border-radius: 10px;
+                        border: solid 1px $lightblue;
+                        padding: 5px;
+                        font-size: 16px;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $lightblue;
+                        }
+
+                        &.active {
+                            background-color: $lightblue;
+                        }
+
+                    }
+                }
+            }
+
+            .links {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                padding-top: 250px;
+                width: 100%;
+                height: 100%;
+
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    list-style-type: none;
+                    font-size: 23px;
+                    gap: 29px;
+                }
             }
         }
     }
