@@ -25,7 +25,7 @@
             </ul>
         </nav>
 
-        <img (click)="openMenu()" class="burg-img" src="assets/icons/burger-menu.png" alt="">
+        <div class="burg-img" [class.animate-icon]="isBurgerOpen && !isClosing" (click)="openMenu()"></div>
 
         <div class="burger-menu" [class.open]="isBurgerOpen" [class.slide-out]="isClosing">
             <div class="top">
@@ -33,9 +33,11 @@
                 <div class="language">
                     <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
                     <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
-
                 </div>
-                <img (click)="closeMenu()" class="close" src="assets/icons/Property 1=CLOSE FINAL.png" alt="">
+
+
+                <div (click)="closeMenu()" class="animation" [class.animate-icon]="isBurgerOpen && !isClosing"></div>
+
             </div>
 
             <div class="links">

@@ -102,14 +102,16 @@ header {
         }
 
         .burg-img {
-            &:hover {
-                cursor: pointer;
-            }
+            width: 35px;
+            height: 35px;
+            background-image: url('../../../../public/assets/icons/burger-menu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
 
-            @media (min-width: 750px) {
-                display: none;
-
-
+            &.animate-icon {
+                animation: open 200ms steps(1, end) forwards;
             }
         }
 
@@ -161,10 +163,27 @@ header {
                 }
 
                 .close {
+
+
                     &:hover {
                         cursor: pointer;
                     }
                 }
+
+                .animation {
+                    height: 35px;
+                    width: 35px;
+                    background-image: url("../../../../public/assets/icons/Close_Final.png");
+                    background-size: contain;
+                }
+
+                .animate-icon {
+                    animation-name: open;
+                    animation-duration: 200ms;
+                    animation-timing-function: steps(1, end);
+                    animation-fill-mode: forwards;
+                }
+
 
                 .language {
                     display: flex;
@@ -211,4 +230,25 @@ header {
             }
         }
     }
+}
+
+@keyframes open {
+    0% {
+        background-image: url("../../../../public/assets/icons/burger-menu.png");
+    }
+
+    ;
+
+    33% {
+        background-image: url("../../../../public/assets/icons/Open_Transition.png");
+    }
+
+    66% {
+        background-image: url("../../../../public/assets/icons/Close_Medum.png");
+    }
+
+    100% {
+        background-image: url("../../../../public/assets/icons/Close_Final.png");
+    }
+
 }
