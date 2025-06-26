@@ -12,6 +12,7 @@ import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { LanguageService } from '../../../shared/services/language.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 function stricterEmailValidator(control: AbstractControl): ValidationErrors | null {
   const email = control.value;
@@ -40,15 +41,16 @@ export class ContactformComponent {
     privacyGuidelines: '',
     privacyError: '',
     submit: '',
-    success: ''
+    success: '',
+    privacyText2: '',
   };
 
 
 
   contactForm: FormGroup;
-  
 
-  constructor(private fb: FormBuilder, private languageService: LanguageService, private http: HttpClient) {
+
+  constructor(private fb: FormBuilder, private languageService: LanguageService, private http: HttpClient, private router: Router) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, stricterEmailValidator]],
@@ -66,8 +68,9 @@ export class ContactformComponent {
           emailError: 'Deine E-Mail ist erforderlich',
           messagePlaceholder: 'Deine Nachricht',
           messageError: 'Bitte gib eine Nachricht ein.',
-          privacyLabel: 'Ich akzeptiere die',
+          privacyLabel: 'Ich habe die',
           privacyGuidelines: 'Datenschutzrichtlinien',
+          privacyText2: 'gelesen und stimme der Bearbeitung meiner Daten zu.',
           privacyError: 'Bitte akzeptiere die Datenschutzbestimmungen',
           submit: 'Nachricht senden',
           success: 'Danke für deine Nachricht! Ich melde mich bald zurück!'
@@ -80,8 +83,9 @@ export class ContactformComponent {
           emailError: 'Your email is required',
           messagePlaceholder: 'Your message',
           messageError: 'Your message is empty.',
-          privacyLabel: 'I accept the',
+          privacyLabel: 'I`ve read the ',
           privacyGuidelines: 'Privacy guidelines',
+          privacyText2: 'and agree to the processing of my data as outlined.',
           privacyError: 'Please accept the privacy policy',
           submit: 'Send message',
           success: "Thanks for your message! I'll respond soon!"
@@ -125,7 +129,10 @@ export class ContactformComponent {
       }
     });
 
+  }
 
+  navigateToPrivacy() {
+    this.router.navigate(['/privacy']);
   }
 }
 

@@ -64,7 +64,13 @@
         <label for="privacy" class="checkbox-label">
             {{text.privacyLabel}}
         </label>
-        <a routerLink="/privacy">{{text.privacyGuidelines}}</a>
+
+
+        <span class="privacy-link" (click)="navigateToPrivacy()" role="link">
+            {{ text.privacyGuidelines }}
+        </span>
+
+        <span class="privacy-text-2">{{text.privacyText2}}</span>
 
         <p class="error-message"
             [class.visible]="contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched">

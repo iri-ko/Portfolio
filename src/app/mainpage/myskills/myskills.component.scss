@@ -4,7 +4,6 @@
 
 .content {
     justify-content: space-between;
-    padding-left: 100px;
     width: 100%;
     margin: 100px 0px;
     z-index: 2;
@@ -86,18 +85,23 @@
 
         .header {
             display: flex;
-            gap: 10px;
+
             align-items: center;
             margin-bottom: 34px;
+            gap: 35px;
 
-            h2{
+            @media (max-width: 750px) {
+                gap: 10px;
+            }
+
+            h2 {
                 margin-bottom: 0;
             }
 
             .blueline {
                 background-color: $intenseblue;
                 height: 4px;
-                width: 10px;
+                width: 58px;
 
                 @media (max-width: 1270px) {
                     height: 4px;

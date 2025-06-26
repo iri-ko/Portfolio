@@ -110,7 +110,7 @@ form {
     }
 
     .error-message {
-        max-height: 10px;
+        max-height: 0px;
         opacity: 0;
         transform: translateY(-5px);
         overflow: hidden;
@@ -213,9 +213,8 @@ form {
             margin-top: -1px;
         }
 
-        a {
+        .privacy-link {
             color: $intenseblue;
-            text-decoration: underline;
 
             &:hover {
                 cursor: pointer;
