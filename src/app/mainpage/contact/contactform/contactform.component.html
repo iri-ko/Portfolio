@@ -10,9 +10,10 @@
         <img *ngIf="contactForm.get('name')?.valid && contactForm.get('name')?.touched"
             src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
 
-        <p class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+        <p class="error-message" [class.visible]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
             {{text.nameError}}
         </p>
+
     </div>
 
 
@@ -29,10 +30,10 @@
         <img *ngIf="contactForm.get('email')?.valid && contactForm.get('email')?.touched"
             src="assets/icons/submit-works.png" alt="valid icon" class="success-icon" />
 
-        <p class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        <p class="error-message"
+            [class.visible]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
             {{text.emailError}}
         </p>
-
     </div>
 
 
@@ -49,26 +50,28 @@
         <img *ngIf="contactForm.get('message')?.valid && contactForm.get('message')?.touched"
             src="assets/icons/submit-works.png" alt="success icon" class="success-icon" />
 
-        <p class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+        <p class="error-message"
+            [class.visible]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
             {{text.messageError}}
         </p>
 
     </div>
 
     <div class="checkbox-group" [ngClass]="{
-       'error': contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched
-     }">
-
-        <label class="checkbox">
-            <input type="checkbox" class="check" formControlName="privacy" />
-            {{text.privacyLabel}}<a> {{text.privacyGuidelines}}</a>
+  'error': contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched
+}">
+        <input id="privacy" type="checkbox" class="check" formControlName="privacy" />
+        <label for="privacy" class="checkbox-label">
+            {{text.privacyLabel}}
         </label>
+        <a routerLink="/privacy">{{text.privacyGuidelines}}</a>
 
-        <p class="error-message" *ngIf="contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched">
+        <p class="error-message"
+            [class.visible]="contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched">
             {{text.privacyError}}
         </p>
-
     </div>
+
 
 
     <button type="submit" [disabled]="contactForm.invalid">{{text.submit}}</button>

@@ -33,6 +33,9 @@
         display: flex;
         justify-content: space-between;
         padding: 0px 100px;
+        overflow: hidden;
+        align-items: flex-start;
+        transition: height 0.3s ease;
 
         @media (max-width: 1210px) {
             flex-direction: column;
@@ -72,4 +75,11 @@
 
         }
     }
+
+    .contactform-wrapper {
+        max-height: 800px;
+        overflow: hidden;
+        transition: max-height 0.3s ease; 
+    }
+
 }

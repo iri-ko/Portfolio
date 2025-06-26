@@ -16,8 +16,10 @@ form {
     flex-direction: column;
     gap: 35px;
     width: 40dvw;
+    overflow: hidden;
+    transition: height 0.3s ease;
 
-    @media (max-width: 1210px){
+    @media (max-width: 1210px) {
         width: 100%;
     }
 
@@ -32,6 +34,7 @@ form {
             border-radius: 10px;
             padding: 15px 25px;
             width: 100%;
+            font-size: 16px;
 
             &::placeholder {
                 color: white;
@@ -58,6 +61,7 @@ form {
             padding: 15px 25px;
             height: 202px;
             width: 100%;
+            font-size: 16px;
 
             &::placeholder {
                 color: white;
@@ -87,6 +91,7 @@ form {
             .messageinput {
                 border-color: #E61C40;
                 width: 100%;
+                font-size: 16px;
             }
 
             .error-icon {
@@ -98,13 +103,28 @@ form {
                 width: 20px;
             }
 
-            .error-message {
-                color: #E61C40;
-                font-size: 13px;
-                margin-top: 8px;
-            }
+
+
         }
     }
+
+    .error-message {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-5px);
+        overflow: hidden;
+        font-size: 13px;
+        color: #E61C40;
+        margin-top: 8px;
+        transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
+        &.visible {
+            max-height: 100px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 
     .input-group.success {
 
@@ -124,7 +144,13 @@ form {
         }
     }
 
-
+    .input-group.error {
+        .error-message {
+            max-height: 200px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
     .shortinput::placeholder,
     .messageinput::placeholder {
@@ -147,52 +173,66 @@ form {
     }
 
 
-    .checkbox {
+    .checkbox-group {
         display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 10px;
         font-size: 14px;
 
-        .check {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
 
+        .check {
             width: 16px;
             height: 16px;
             border: 1px solid $lightblue;
             background-color: $darkblue;
             cursor: pointer;
+            appearance: none;
+            position: relative;
+            margin-top: 2px;
 
-            &:checked {
-                color: $lightblue;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    width: 3px;
-                    height: 8px;
-                    border: solid $lightblue;
-                    border-width: 0 2px 2px 0;
-                    transform: rotate(45deg);
-                }
+            &:checked::after {
+                content: "";
+                position: absolute;
+                top: 1px;
+                left: 5px;
+                width: 3px;
+                height: 8px;
+                border: solid $lightblue;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
             }
         }
 
+        .checkbox-label {
+            margin-top: -1px;
+        }
 
         a {
             color: $intenseblue;
+            text-decoration: underline;
 
             &:hover {
                 cursor: pointer;
             }
         }
+
+        &.error {
+            .error-message {
+                color: #E61C40;
+                font-size: 13px;
+                margin-top: 8px;
+                flex-basis: 100%;
+            }
+        }
     }
 
+
     button {
-        background-color: $lightblue;
         border-radius: 10px;
         border: none;
         padding: 15px 30px;
@@ -200,14 +240,23 @@ form {
         width: 250px;
         align-self: center;
         margin-top: 50px;
-        transition: transform 0.2s ease, background-color 0.2s ease;
+        color: white;
         transform: scale(0.94);
+        transition: transform 0.2s ease, background-color 0.3s ease;
+        background-color: #B6B6B6;
+        cursor: not-allowed;
 
         &:hover {
             transform: scale(1);
+        }
+
+        &:not(:disabled) {
+            background-color: $lightblue;
             cursor: pointer;
         }
     }
+
+
 
     .submit-success {
         color: #70E61C;

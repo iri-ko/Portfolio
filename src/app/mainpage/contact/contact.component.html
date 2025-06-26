@@ -1,16 +1,20 @@
+
 <section>
-<div class="content">
-    <div class="headline">
-        <div class="shortblueline"></div>
-        <h2>{{text.header}}</h2>
-    </div>
-    <div class="contactdiv">
-        <div class="contactleft">
-            <h4>{{text.title}}</h4>
-            <span>{{text.description1}}</span>
-            <span>{{text.description2}} <b>{{text.cta}}</b></span>    
+    <div class="content">
+        <div class="headline">
+            <div class="shortblueline"></div>
+            <h2>{{text.header}}</h2>
         </div>
-        <app-contactform></app-contactform>
+        <div class="contactdiv">
+            <div class="contactleft">
+                <h4>{{text.title}}</h4>
+                <span>{{text.description1}}</span>
+                <span>{{text.description2}} <b>{{text.cta}}</b></span>
+            </div>
+            <div class="contactform-wrapper">
+                <app-contactform></app-contactform>
+            </div>
+
+        </div>
     </div>
-</div>
 </section>
