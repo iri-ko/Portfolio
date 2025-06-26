@@ -1,0 +1,30 @@
+@import "../../styles.scss";
+
+.content {
+    padding: 150px 100px;
+
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: 750px){
+        padding: 150px 25px;
+    }
+
+    h2 {
+        margin-top: 20px;
+        font-size: 40px;
+
+
+        @media (max-width: 750px){
+      font-size: 20px;
+    }
+    }
+
+    ul {
+list-style-type: none;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
