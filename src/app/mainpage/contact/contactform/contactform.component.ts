@@ -4,11 +4,21 @@ import {
   FormBuilder,
   Validators,
   FormGroup,
+  AbstractControl,
+  ValidationErrors
 } from '@angular/forms';
+
 import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { LanguageService } from '../../../shared/services/language.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+function stricterEmailValidator(control: AbstractControl): ValidationErrors | null {
+  const email = control.value;
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/i;
+  return regex.test(email) ? null : { email: true };
+}
+
 
 @Component({
   selector: 'app-contactform',
@@ -36,11 +46,13 @@ export class ContactformComponent {
 
 
   contactForm: FormGroup;
+  
 
   constructor(private fb: FormBuilder, private languageService: LanguageService, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, stricterEmailValidator]],
+
       message: ['', Validators.required],
       privacy: [false, Validators.requiredTrue],
     });
@@ -112,6 +124,7 @@ export class ContactformComponent {
         console.error('Senden fehlgeschlagen', error);
       }
     });
+
 
   }
 }
