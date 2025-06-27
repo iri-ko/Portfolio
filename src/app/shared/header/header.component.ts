@@ -68,7 +68,6 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   private setupIntersectionObserver(): void {
     const options = {
       root: null,
-      rootMargin: '-110px 0px 0px 0px',
       threshold: 0.3,
     };
 
