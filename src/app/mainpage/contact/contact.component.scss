@@ -53,6 +53,10 @@
             flex-direction: column;
             gap: 35px;
 
+            @media (min-width: 1921px) {
+                width: 50%;
+            }
+
             @media (max-width: 1210px) {
                 width: 70%;
                 gap: 20px;
@@ -79,7 +83,7 @@
     .contactform-wrapper {
         max-height: 800px;
         overflow: hidden;
-        transition: max-height 0.3s ease; 
+        transition: max-height 0.3s ease;
     }
 
 }

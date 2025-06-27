@@ -20,6 +20,10 @@ form {
     transition: height 0.3s ease;
     height: 100dvh;
 
+    @media (min-width: 1921px) {
+        width: 100%;
+    }
+
     @media (max-width: 1210px) {
         width: 100%;
     }

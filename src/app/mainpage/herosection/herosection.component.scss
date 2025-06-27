@@ -7,8 +7,12 @@
     height: auto;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 100px 100px 47px;
+    padding: 100px 100px 100px 47px;
     height: calc(100dvh - 110px);
+
+    @media (min-width: 1921px){
+            height: 40dvh;
+        }
 
     @media (max-width: 1340px) {
         height: calc(90dvh - 110px);
@@ -31,17 +35,22 @@
 
 
     .hero-image {
+        height: 90dvh;
 
         img {
             margin-top: 100px;
             height: 705px;
             width: 600px;
             object-fit: cover;
-            z-index: 4;
+            z-index: 2;
+
+            @media (min-width: 1921px){
+            margin-top: 700px;
+        }
 
             @media (max-width: 1340px) {
                 height: 500px;
-                margin-top: 200px;
+                margin-top: 290px;
             }
 
             @media (max-width: 1100px) {
@@ -66,6 +75,13 @@
         flex-direction: column;
         margin-top: 1cqb;
         justify-content: center;
+        z-index: 3;
+        position: absolute;
+        right: 100px;
+
+        @media (min-width: 1921px){
+            display: flex;
+        }
 
         @media (max-width: 1340px) {
             position: absolute;

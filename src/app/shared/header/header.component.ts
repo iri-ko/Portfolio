@@ -7,6 +7,8 @@ import { LanguageService } from '../../shared/services/language.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
+
+
 export class HeaderComponent {
   navText = {
     about: '',
@@ -22,6 +24,7 @@ export class HeaderComponent {
   isClosing = false;
 
   constructor(private languageService: LanguageService, private renderer: Renderer2) {
+    
     this.languageService.currentLang.subscribe((lang) => {
       this.currentLang = lang;
 
