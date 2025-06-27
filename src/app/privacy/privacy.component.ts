@@ -86,14 +86,7 @@ export class PrivacyComponent {
     contactLegal: string;
     contactNoteTitle: string;
     contactFormInfo: string;
-
-
-
-
   };
-
-
-
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLang.subscribe(lang => {
@@ -211,8 +204,6 @@ export class PrivacyComponent {
           contactNoteTitle: 'Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:',
           contactFormInfo:
             'Kontaktformular: Bei Nutzung des Formulars, per E-Mail oder anderen Wegen, verarbeiten wir die übermittelten Daten ausschließlich zur Bearbeitung der Anfrage. Dazu zählen in der Regel Name, Kontaktdaten und ggf. weitere Informationen. Rechtsgrundlagen: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO), berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO).',
-
-
         }
         : {
           header: 'Privacy Policy',

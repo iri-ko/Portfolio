@@ -1,9 +1,8 @@
-<header>
+<header [class.scrolled]="isScrolled">
     <div class="content">
         <a href="#hero"> <img class="logo" src="assets/images/Logo.png" alt=""></a>
         <nav class="menu">
             <ul>
-
                 <li> <a href="#aboutme" [class.active-link]="activeSection === 'aboutme'"
                         (click)="setActive('aboutme')">{{
                         navText.about }}</a></li>
@@ -13,10 +12,6 @@
                 <li><a href="#portfolio" [class.active-link]="activeSection === 'portfolio'"
                         (click)="setActive('portfolio')">{{
                         navText.portfolio }}</a></li>
-
-
-
-
                 <div class="language">
                     <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
                     <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
@@ -34,15 +29,11 @@
                     <button [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</button>
                     <button [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</button>
                 </div>
-
-
                 <div (click)="closeMenu()" class="animation" [class.animate-icon]="isBurgerOpen && !isClosing"></div>
-
             </div>
 
             <div class="links">
                 <ul>
-
                     <li> <a (click)="closeMenu()" href="#aboutme" [class.active-link]="activeSection === 'aboutme'"
                             (click)="setActive('aboutme')">{{
                             navText.about }}</a></li>
@@ -57,8 +48,6 @@
                     <li><a (click)="closeMenu()" href="#contact" [class.active-link]="activeSection === 'contact'"
                             (click)="setActive('contact')">{{
                             navText.contact}}</a></li>
-
-
                 </ul>
             </div>
 

@@ -9,7 +9,10 @@ import { LanguageService } from '../../shared/services/language.service';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
+
 export class ContactComponent {
+
+  //#region variables
   currentLang: 'EN' | 'DE' = 'EN';
 
   text = {
@@ -19,6 +22,8 @@ export class ContactComponent {
     description2: '',
     cta: ''
   };
+
+  //#endregion
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLang.subscribe((lang) => {

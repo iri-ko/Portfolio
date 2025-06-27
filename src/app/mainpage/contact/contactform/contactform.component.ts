@@ -7,7 +7,6 @@ import {
   AbstractControl,
   ValidationErrors
 } from '@angular/forms';
-
 import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { LanguageService } from '../../../shared/services/language.service';
@@ -20,7 +19,6 @@ function stricterEmailValidator(control: AbstractControl): ValidationErrors | nu
   return regex.test(email) ? null : { email: true };
 }
 
-
 @Component({
   selector: 'app-contactform',
   standalone: true,
@@ -30,6 +28,8 @@ function stricterEmailValidator(control: AbstractControl): ValidationErrors | nu
 })
 
 export class ContactformComponent {
+
+  //#region variables
   text = {
     namePlaceholder: '',
     nameError: '',
@@ -45,16 +45,15 @@ export class ContactformComponent {
     privacyText2: '',
   };
 
-
-
   contactForm: FormGroup;
-
+  
+  submissionSuccess = false;
+  //#endregion
 
   constructor(private fb: FormBuilder, private languageService: LanguageService, private http: HttpClient, private router: Router) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, stricterEmailValidator]],
-
       message: ['', Validators.required],
       privacy: [false, Validators.requiredTrue],
     });
@@ -95,41 +94,53 @@ export class ContactformComponent {
   }
 
 
-  submissionSuccess = false;
 
+  //#region onSubmit
   onSubmit() {
+    if (!this.validateForm()) return;
+    const body = this.buildRequestBody();
+    const headers = this.createHeaders();
+    this.sendForm(body, headers);
+  }
+
+  private validateForm(): boolean {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
-      return;
+      return false;
     }
+    return true;
+  }
 
+  private buildRequestBody(): string {
     const formData = this.contactForm.value;
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
-
-    const body = new URLSearchParams({
+    return new URLSearchParams({
       name: formData.name,
       email: formData.email,
       message: formData.message
     }).toString();
+  }
 
+  private createHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+  }
+
+  private sendForm(body: string, headers: HttpHeaders): void {
     this.http.post('https://www.iko-dev.com/contact.php', body, {
       headers,
       responseType: 'text'
     }).subscribe({
-      next: () => {
-        this.submissionSuccess = true;
-        this.contactForm.reset();
-        setTimeout(() => this.submissionSuccess = false, 5000);
-      },
-      error: (error) => {
-        console.error('Senden fehlgeschlagen', error);
-      }
+      next: () => this.handleSuccess()
     });
-
   }
+
+  private handleSuccess(): void {
+    this.submissionSuccess = true;
+    this.contactForm.reset();
+    setTimeout(() => this.submissionSuccess = false, 5000);
+  }
+  //#endregion
 
   navigateToPrivacy() {
     this.router.navigate(['/privacy']);

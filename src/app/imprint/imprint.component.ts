@@ -9,19 +9,23 @@ import { LanguageService } from '../shared/services/language.service';
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss'
 })
+
 export class ImprintComponent {
+  //#region variables
   currentLang: 'EN' | 'DE' = 'EN';
+
   text = {
     imprint: '',
     law: '',
     contact: '',
     phone: '',
   };
+  //#endregion
 
   constructor(private languageService: LanguageService) {
+
     this.languageService.currentLang.subscribe((lang) => {
       this.currentLang = lang;
-
       if (lang === 'DE') {
         this.text = {
           imprint: 'Impressum',

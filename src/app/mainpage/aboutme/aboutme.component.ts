@@ -7,7 +7,10 @@ import { LanguageService } from '../../shared/services/language.service';
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss',
 })
+
 export class AboutmeComponent {
+
+  //#region variables
   currentLang: 'EN' | 'DE' = 'EN';
 
   text = {
@@ -16,11 +19,11 @@ export class AboutmeComponent {
     creative: '',
     logical: '',
   };
+  //#endregion
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLang.subscribe((lang) => {
       this.currentLang = lang;
-
       if (lang === 'DE') {
         this.text = {
           header: 'Über mich',

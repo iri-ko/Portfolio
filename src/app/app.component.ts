@@ -13,15 +13,19 @@ import { HeaderComponent } from './shared/header/header.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Porfolio';
+  title = 'Portfolio';
 
-  private router = inject(Router); // modern Angular DI
+  private router = inject(Router);
 
   constructor() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'auto' }); // or 'smooth'
+      .subscribe((event: NavigationEnd) => {
+        const isAnchorLink = event.urlAfterRedirects.includes('#');
+
+        if (!isAnchorLink) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }
       });
   }
 }

@@ -7,6 +7,8 @@ import { LanguageService } from '../../shared/services/language.service';
   styleUrls: ['./herosection.component.scss']
 })
 export class HerosectionComponent {
+
+  //#region variables
   currentLang: 'EN' | 'DE' = 'EN';
 
   text = {
@@ -14,6 +16,8 @@ export class HerosectionComponent {
     title: '',
     cta: ''
   };
+
+  //#endregion
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLang.subscribe((lang) => {

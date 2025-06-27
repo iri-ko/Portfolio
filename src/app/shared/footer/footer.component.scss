@@ -12,7 +12,6 @@ footer {
         height: 380px;
     }
 
-
     .content {
         @include width-1940;
         width: 100%;
@@ -73,8 +72,6 @@ footer {
             @media (max-width: 750px) {
                 margin-bottom: 30px;
             }
-
-
         }
 
         .footerright {

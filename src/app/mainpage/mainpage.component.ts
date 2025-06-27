@@ -17,7 +17,5 @@ export class MainpageComponent {
   activeSection: string = '';
   setActive(sectionId: string) {
     this.activeSection = sectionId;
-
-
   }
 }

@@ -8,6 +8,7 @@ import { LanguageService } from '../../shared/services/language.service';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
+
 export class PortfolioComponent {
   currentLang: 'EN' | 'DE' = 'EN';
 

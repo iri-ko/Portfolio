@@ -11,6 +11,9 @@ import { NgClass } from '@angular/common';
 })
 
 export class ProjectComponent {
+
+  currentLang: 'EN' | 'DE' = 'EN';
+
   projects: Array<Projects> = [
     {
       image: 'assets/images/join photo.png',
@@ -25,7 +28,7 @@ export class ProjectComponent {
     },
     {
       image: 'assets/images/Sharkie photo.png',
-      name:'El Pollo Loco',
+      name: 'El Pollo Loco',
       skills: 'JavaScript | HTML | CSS',
       description: {
         EN: 'A simple browser game programmed with Javascript. Based on object-oriented approach. Help Pepe defeat the crazy chickens!',
@@ -47,11 +50,9 @@ export class ProjectComponent {
     },
   ];
 
-  currentLang: 'EN' | 'DE' = 'EN';
-
-constructor(private languageService: LanguageService) {
-  this.languageService.currentLang.subscribe((lang) => {
-    this.currentLang = lang;
-  });
-}
+  constructor(private languageService: LanguageService) {
+    this.languageService.currentLang.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
 }

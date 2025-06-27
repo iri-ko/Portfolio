@@ -9,7 +9,7 @@ import { LanguageService } from '../../shared/services/language.service';
   styleUrl: './myskills.component.scss'
 })
 export class MyskillsComponent {
- currentLang: 'EN' | 'DE' = 'EN';
+  currentLang: 'EN' | 'DE' = 'EN';
 
   text = {
     header: '',

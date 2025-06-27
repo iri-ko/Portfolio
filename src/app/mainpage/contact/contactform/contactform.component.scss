@@ -10,7 +10,6 @@ textarea:-webkit-autofill {
     transition: background-color 9999s ease-out;
 }
 
-
 form {
     display: flex;
     flex-direction: column;
@@ -27,7 +26,6 @@ form {
     @media (max-width: 1210px) {
         width: 100%;
     }
-
 
     .input-group {
         position: relative;
@@ -75,7 +73,6 @@ form {
                 transition: opacity 0.2s ease;
             }
 
-
             &:hover {
                 border-color: $lightblue;
                 cursor: pointer;
@@ -107,9 +104,6 @@ form {
                 height: 20px;
                 width: 20px;
             }
-
-
-
         }
     }
 
@@ -129,7 +123,6 @@ form {
             transform: translateY(0);
         }
     }
-
 
     .input-group.success {
 
@@ -176,7 +169,6 @@ form {
             margin-top: 8px;
         }
     }
-
 
     .checkbox-group {
         display: flex;
@@ -235,7 +227,6 @@ form {
         }
     }
 
-
     button {
         border-radius: 10px;
         border: none;
@@ -262,8 +253,6 @@ form {
         }
     }
 
-
-
     .submit-success {
         color: #70E61C;
         font-size: 15px;
@@ -277,7 +266,6 @@ form {
             opacity: 0;
             transform: translateY(5px);
         }
-
         to {
             opacity: 1;
             transform: translateY(0);
