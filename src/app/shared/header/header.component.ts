@@ -30,7 +30,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   isScrolled = false;
 
   private observer!: IntersectionObserver;
-  private sectionIds = ['aboutme', 'myskills', 'portfolio', 'contact'];
+  private sectionIds = ['hero', 'aboutme', 'myskills', 'portfolio', 'contact'];
 
   constructor(
     private languageService: LanguageService,
@@ -44,17 +44,17 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       this.navText =
         lang === 'DE'
           ? {
-              about: 'Über mich',
-              skills: 'Kenntnisse',
-              portfolio: 'Portfolio',
-              contact: 'Kontakt',
-            }
+            about: 'Über mich',
+            skills: 'Kenntnisse',
+            portfolio: 'Portfolio',
+            contact: 'Kontakt',
+          }
           : {
-              about: 'About me',
-              skills: 'Skills',
-              portfolio: 'Portfolio',
-              contact: 'Contact',
-            };
+            about: 'About me',
+            skills: 'Skills',
+            portfolio: 'Portfolio',
+            contact: 'Contact',
+          };
     });
   }
 
