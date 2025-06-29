@@ -6,7 +6,7 @@ footer {
     width: 100%;
     display: flex;
     align-items: center;
-    border-top: 4px solid $lightblue;
+    
 
     @media (max-width: 750px) {
         height: 380px;
@@ -15,11 +15,18 @@ footer {
     .content {
         @include width-1940;
         width: 100%;
+        height: 100%;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0px 100px;
+        border-top: 4px solid $lightblue;
+
+        @media (min-width: 1921px) {
+            border-left: 10px $lightblue solid;
+            border-right: 10px $lightblue solid;   
+        }
 
         @media (max-width: 750px) {
             flex-direction: column;

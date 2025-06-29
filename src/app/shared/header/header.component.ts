@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { LanguageService } from '../../shared/services/language.service';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -36,25 +37,26 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     private languageService: LanguageService,
     private renderer: Renderer2,
     private ngZone: NgZone,
+    private router: Router,
+    private route: ActivatedRoute,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.languageService.currentLang.subscribe((lang) => {
       this.currentLang = lang;
-
       this.navText =
         lang === 'DE'
           ? {
-            about: 'Über mich',
-            skills: 'Kenntnisse',
-            portfolio: 'Portfolio',
-            contact: 'Kontakt',
-          }
+              about: 'Über mich',
+              skills: 'Kenntnisse',
+              portfolio: 'Portfolio',
+              contact: 'Kontakt',
+            }
           : {
-            about: 'About me',
-            skills: 'Skills',
-            portfolio: 'Portfolio',
-            contact: 'Contact',
-          };
+              about: 'About me',
+              skills: 'Skills',
+              portfolio: 'Portfolio',
+              contact: 'Contact',
+            };
     });
   }
 
@@ -62,6 +64,15 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.setupIntersectionObserver();
     this.ngZone.runOutsideAngular(() => {
       this.waitForSections(this.sectionIds);
+    });
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          setTimeout(() => this.scrollToSection(fragment), 100);
+        }
+      }
     });
   }
 
@@ -96,10 +107,20 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
+  scrollToSection(id: string): void {
+    const element = this.document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  setActive(sectionId: string): void {
+    if (this.router.url !== '/') {
+      this.router.navigate(['/'], { fragment: sectionId });
+    } else {
+      this.scrollToSection(sectionId);
+    }
+    this.activeSection = sectionId;
   }
 
   @HostListener('window:scroll', [])
@@ -109,10 +130,6 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   switchLang(lang: 'EN' | 'DE'): void {
     this.languageService.setLang(lang);
-  }
-
-  setActive(sectionId: string): void {
-    this.activeSection = sectionId;
   }
 
   openMenu(): void {
@@ -125,5 +142,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.isClosing = false;
     this.isBurgerOpen = false;
     this.renderer.removeClass(document.body, 'no-scroll');
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 }

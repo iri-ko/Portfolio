@@ -13,6 +13,10 @@ main {
     margin-left: auto;
     margin-right: auto;
 
+    @media (min-width: 1921px){
+    border-left: 10px $lightblue solid;
+    border-right: 10px $lightblue solid;}
+
 
     min-height: calc(100dvh - 110px - 291px);
 

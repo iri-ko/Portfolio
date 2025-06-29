@@ -15,7 +15,13 @@ header {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        height: 100%;
         padding: 0px 100px;
+
+        @media (min-width: 1921px) {
+            border-left: 10px $lightblue solid;
+            border-right: 10px $lightblue solid;
+        }
 
         @media (max-width: 750px) {
             padding: 37px 25px;
@@ -103,7 +109,7 @@ header {
             background-position: center;
             cursor: pointer;
 
-            @media (min-width: 750px){
+            @media (min-width: 750px) {
                 display: none;
             }
 
@@ -228,17 +234,17 @@ header {
 }
 
 header.scrolled {
-  .menu a {
-    color: white;
+    .menu a {
+        color: white;
 
-    &:hover {
-      color: $lightblue;
-    }
+        &:hover {
+            color: $lightblue;
+        }
 
-    &.active-link {
-      color: $lightblue;
+        &.active-link {
+            color: $lightblue;
+        }
     }
-  }
 }
 
 
